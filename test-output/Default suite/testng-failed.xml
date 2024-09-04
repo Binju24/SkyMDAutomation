@@ -3,15 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.testMavenProject.LoginTest$AppTest">
+      <class name="com.example.testMavenProject.DermVisit">
         <methods>
-          <include name="testIncorrectEmailAndPassword"/>
-          <include name="testIncorrectEmailButCorrectPassword"/>
-          <include name="tearDown"/>
-          <include name="testCorrectEmailButIncorrectPassword"/>
-          <include name="testCorrectEmailAndPassword"/>
+          <include name="dermatologyVisitFlow"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- com.example.testMavenProject.LoginTest$AppTest -->
+      </class> <!-- com.example.testMavenProject.DermVisit -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

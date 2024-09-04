@@ -3,13 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.example.testMavenProject.signup">
+      <class name="com.example.testMavenProject.DermVisit">
         <methods>
-          <include name="testPasswordRequirements"/>
-          <include name="testDuplicateEmail"/>
+          <include name="dermatologyVisitFlow"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.example.testMavenProject.signup -->
+      </class> <!-- com.example.testMavenProject.DermVisit -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

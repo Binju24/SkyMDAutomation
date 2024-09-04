@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-       <class name="com.example.testMavenProject.signup">
+       <class name="com.example.testMavenProject.DermVisit">
        </class>
     </classes>
   </test> <!-- Test -->

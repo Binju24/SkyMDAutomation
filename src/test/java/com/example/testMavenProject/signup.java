@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 //import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -30,12 +31,12 @@ public class signup {
     @Test(priority = 1)
     public void testValidSignUp() throws InterruptedException {
         clickSignUpButtonFromLoginPage();
-        enterEmail("testuser023@example.com");
+        enterEmail("testuser031@example.com");
         clickNextButton();
         enterPassword("ValidPass123");
         checkTermsAndConditions();
         clickContinueButton();
-        completeProfile("John", "Doe", "7102000106", "92121");
+        completeProfile("John", "Doe", "7105986036", "92121");
         clickFinishSignUpButton();
         Thread.sleep(5000);
 
@@ -70,7 +71,6 @@ public class signup {
 
     @Test(priority = 3)
     public void testEmptyFields() throws InterruptedException {
-        //clickSignUpButtonFromLoginPage();
         
         Thread.sleep(500);
         WebElement emailField = driver.findElement(By.id("email"));
@@ -102,13 +102,11 @@ public class signup {
         clickNextButton();
         enterPassword("short");
         Thread.sleep(5000);
-        checkTermsAndConditions();
-        Thread.sleep(5000);
-        clickContinueButton();
+        System.out.println("Password entered successfully");
 
         // Assert that an error message is displayed
         Thread.sleep(5000);
-        WebElement continueButton = driver.findElement(By.xpath("//*[@id=\"signup_next\"]"));
+        WebElement continueButton = driver.findElement(By.id("signup_next"));
 
         // Check if the "Next" button is enabled
            boolean isContinueButtonEnabled = continueButton.isEnabled();
@@ -143,8 +141,10 @@ public class signup {
         passwordField.sendKeys(Keys.DELETE);        // Delete the selected text
         System.out.println("Cleared the password field");
         
-        enterPassword("binju@f22labs.com");
-        
+        enterPassword("Welcome@123");
+        Thread.sleep(5000);
+        checkTermsAndConditions();
+        Thread.sleep(5000);
         clickContinueButton();
 
         // Assert that an error message is displayed
@@ -226,10 +226,10 @@ public class signup {
         Thread.sleep(2000);
     }
 
-//    @AfterClass
-//    public void teardown() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterClass
+    public void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }
